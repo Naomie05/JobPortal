@@ -1,0 +1,53 @@
+.content {
+	padding: 15px;
+	margin-left: 0px;
+}
+
+mat-card {
+	min-width: 750px;
+	min-height: 50px;
+	margin-bottom: 18px;
+	margin-left: 9px;
+	margin-right: 9px;
+	align-self: center;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.452);
+}
+
+mat-list-item{
+	min-height: 180px;
+}
+
+mat-card-title {
+	font-size: 21px;
+	margin-top: 3px;
+	margin-bottom: 8px;
+	color: #4050B5;
+}
+
+mat-card-header {
+	display: table;
+	justify-content: center;
+	align-items: center;
+}
+
+h2 {
+	margin-top: 8px;
+	font-size: 18px;
+}
+
+mat-chip {
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+mat-card-actions {
+	display: flex;
+	/* justify-content: center;
+	align-items: center; */
+}
+
+button {
+	margin-left: 8px;
+	margin-right: 8px;
+	font-size: 13px;
+}

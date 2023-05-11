@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<div class="container">
+	<div>
+		<div>
+			<div mat-dialog-title>Post Title: {{post.title}}</div>
+		</div>
+		<div mat-dialog-content>
+			<div class="row">
+				<div class="col-1">
+					<p>title</p>
+					<mat-form-field>
+						<input matInput name="title" [(ngModel)]="post.title" required>
+					</mat-form-field>
+				</div>
+				<div class="col-2">
+					<p>description</p>
+					<mat-form-field>
+						<input matInput name="description" [(ngModel)]="post.description" required>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<p>expectations</p>
+					<mat-form-field>
+						<input matInput name="expectations" [(ngModel)]="post.expectations" required>
+					</mat-form-field>
+				</div>
+				<div class="col">
+					<p>responsabilites</p>
+					<mat-form-field>
+						<input matInput name="responsabilites" [(ngModel)]="post.responsabilites" required>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<p>salary</p>
+					<mat-form-field>
+						<input matInput name="salary" [(ngModel)]="post.salary" required>
+					</mat-form-field>
+				</div>
+				<div class="col">
+					<p>status</p>
+					<mat-form-field>
+						<input matInput name="status" [(ngModel)]="post.status" required>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<p>location</p>
+					<mat-form-field>
+						<input matInput name="location" [(ngModel)]="post.location" required>
+					</mat-form-field>
+				</div>
+				<div class="col">
+					<p>role</p>
+					<mat-form-field>
+						<input matInput name="location" [(ngModel)]="post.role" required>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<p>keywords</p>
+					<mat-form-field>
+						<textarea matInput name="location" [(ngModel)]="keywordsAsString" required></textarea>
+					</mat-form-field>
+				</div>
+				<div class="col">
+					<p>role</p>
+					<mat-form-field>
+						<input matInput name="location" [(ngModel)]="post.role" required>
+					</mat-form-field>
+				</div>
+			</div>
+		</div>
+		<div mat-dialog-actions>
+			<button mat-raised-button color="warn" (click)="onCancelUserDialog()">Cancel</button>
+			<button mat-raised-button color="primary" [mat-dialog-close]="post" (click)="updateProfile()">Save changes
+			</button>
+		</div>
+	</div>
+</div>
+
+</html>

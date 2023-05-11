@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<mat-card>
+	<mat-card-content>
+		<mat-vertical-stepper [linear]="true" #stepper>
+			<mat-step>
+				<ng-template matStepLabel>Which company do you work for</ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>AWS, Google,... etc</mat-label>
+							<textarea matInput [(ngModel)]="user.company.name" name="skills" required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Brief description of the company's business</ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>Oh.. we usually work on this and that</mat-label>
+							<textarea matInput [(ngModel)]="user.company.description" name="yearsOfExperience"
+								required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>How many empolyees></ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>1M ?</mat-label>
+							<textarea matInput [(ngModel)]="user.company.numberOfEmployee" name="certifications"
+								required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Website link</ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>www.somesite.com</mat-label>
+							<textarea matInput [(ngModel)]="user.company.website" name="education" required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Done</ng-template>
+				<div>
+					<mat-divider></mat-divider>
+					<button (click)="createProfile()" mat-raised-button color="primary">Submit</button>
+				</div>
+			</mat-step>
+		</mat-vertical-stepper>
+	</mat-card-content>
+</mat-card>
+</html>

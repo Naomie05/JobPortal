@@ -1,0 +1,83 @@
+.content {
+	padding: 15px;
+	margin-left: 0px;
+}
+
+.grid-container {
+	display:grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 1rem;
+}
+
+.grid-item {
+	grid-column: span 1;
+}
+mat-card {
+	max-width: 350px;
+	min-height: 350px;
+	margin-bottom: 18px;
+	margin-left: 9px;
+	margin-right: 9px;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.452);
+}
+
+mat-card-title {
+	font-size: 21px;
+	margin-top: -25px;
+	margin-bottom: 0px;
+	margin-left: 13px;
+	color: #4050B5;
+}
+
+h2 {
+	margin-top: 8px;
+	font-size: 18px;
+}
+
+mat-card-actions {
+	display: flex;
+}
+
+button {
+	margin-left: 8px;
+	margin-right: 8px;
+	font-size: 11px;
+}
+
+body {
+	background: #f5f5f5;
+	margin-top: 20px;
+}
+
+.left-text {
+	float: left;
+	width: 50px;
+	font-weight: bold;
+	/* display: inline-block; */
+}
+
+.right-text {
+	float: left;
+	width: 200px;
+	margin-left: 30px;
+}
+
+mat-chip {
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-top: 10px;
+}
+
+.mat-chip {
+	background-color: #7280d1 !important;
+}
+
+.inside-mat-chip {
+	font-size: medium;
+	color: #fff !important;
+}
+
+.jobs {
+	padding: 18px;
+	min-width: 800px;
+}

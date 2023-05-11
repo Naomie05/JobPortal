@@ -1,0 +1,30 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>{{ post.title }}</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<ul>
+			<li><strong>Description: </strong> {{ post.description }}</li>
+			<li><strong>Responsibilities: </strong> {{ post.responsabilites }}</li>
+			<li><strong>Expectations: </strong> {{ post.expectations }}</li>
+			<li><strong>Salary: </strong> {{ post.salary }}</li>
+			<li><strong>Location: </strong> {{ post.location }}</li>
+			<li><strong>Status: </strong> {{ post.status }}</li>
+			<li><strong>Created at: </strong> {{ post.createdAt }}</li>
+			<mat-divider></mat-divider>
+			<strong>Posted by: </strong>
+			<li><strong>Recruiter: </strong> {{ post.recruiter.username }}</li>
+			<li><strong>Company: </strong> {{ post.recruiter.company.name }}</li>
+			<li><strong>Website: </strong> {{ post.recruiter.company.website }}</li>
+			<li><strong>Description: </strong> {{ post.recruiter.company.description }}</li>
+			<li><strong>Number of employee: </strong> {{ post.recruiter.company.numberOfEmployee }}</li>
+			<mat-chip *ngFor="let k of post.keywords">{{k}}</mat-chip>
+		</ul>
+	</mat-card-content>
+
+	<mat-card-actions>
+
+		<button mat-raised-button color="primary" (click)="onCloselUserDialog()">Close</button>
+		<button mat-raised-button color="primary">Apply</button>
+	</mat-card-actions>
+</mat-card>

@@ -1,0 +1,37 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>{{ app.post.title }}</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<ul>
+			<strong>Applicant : </strong>
+			<li><strong>Username: </strong> {{ app.user.username }}</li>
+			<li><strong>Years of Experience: </strong> {{ app.user.yearsOfExperience }}</li>
+			<li><strong>Certifications: </strong> {{ app.user.certifications }}</li>
+			<li><strong>Education: </strong> {{ app.user.education }}</li>
+			<li><strong>Level of experience: </strong> {{ app.user.experienceLevel }}</li>
+			<li><strong>Tags: </strong> {{ app.user.tags }}</li>
+			<mat-divider></mat-divider>
+			<li *ngIf="isResume"><strong>Resume: </strong> <button mat-raised-button color="primary" (click)="viewPdf(app.user.id)">View pdf</button></li>
+            <mat-divider></mat-divider>
+            <li><strong *ngIf="!editMode">Status: </strong> {{ app.status }}</li>
+            <mat-form-field *ngIf="editMode">
+                <input matInput name="status" [(ngModel)]="app.status" disabled="false">
+            </mat-form-field>
+            <li><strong *ngIf="!editMode">Is accepted: </strong> {{ app.interviewAccepted }}</li>
+            <mat-form-field *ngIf="editMode">
+                <input matInput name="interviewAccepted" [(ngModel)]="app.interviewAccepted" disabled="false">
+            </mat-form-field>
+            <li ><strong *ngIf="!editMode ">Interview Location: </strong> {{ app.interviewLocation }}</li>
+            <mat-form-field *ngIf="editMode">
+                <input matInput name="interviewLocation" [(ngModel)]="app.interviewLocation" disabled="false">
+            </mat-form-field>
+		</ul>
+	</mat-card-content>
+
+	<mat-card-actions>
+		<button mat-raised-button color="primary" (click)="onCloseDialog()">Close</button>
+		<button mat-raised-button color="primary" (click)="editMode=!editMode">Update</button>
+        <button mat-raised-button color="primary" *ngIf="editMode" (click)="updateJobApplication(job.id)">Save</button>
+	</mat-card-actions>
+</mat-card>

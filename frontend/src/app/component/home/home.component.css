@@ -1,0 +1,227 @@
+:host {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: 22px;
+	/* color: #333; */
+	/* box-sizing: border-box; */
+	/* -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale; */
+}
+
+.navbar-spacer {
+	flex: 1;
+}
+
+.navbar {
+	z-index: 2;
+	font-size: 22px;
+	box-shadow: 0px 3px 70px rgba(0, 0, 0, 0.492);
+}
+
+.navbar-brand {
+	font-size: 22px;
+	text-decoration: none;
+	color: white;
+}
+
+h3 {
+	text-align: center;
+	display: flex;
+	margin: 6px;
+	padding: 6px;
+	font-size: 22px;
+}
+
+.navbar-container {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	font-size: 22px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*Banner start here*/
+
+.carousel-container{
+	position: center center;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	box-shadow: 0 8px 16px #dce1e1;
+	size: cover;
+	overflow: hidden;
+
+}
+
+.carousel-container img{
+	display:none ;
+}
+.carousel-container img.image-active{
+	display: block;
+	width: 100%;
+	height: 100vh;
+	margin-bottom: 0;
+	object-fit: cover;
+}
+
+// dots/indicators
+.carousel-dot-container{
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	margin-bottom: 1rem;
+}
+
+.dot{
+	cursor: pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 5px;
+	background-color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	transition: opacity 0.6s ease;
+	opacity: 0.5;
+}
+
+.active,
+.dot:hover{
+	opacity: 1;
+}
+
+.fade{
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade{
+	from{
+		opacity: 0.4;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+.btn-carousel{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 15%;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+	background: 0 0;
+	border: 0;
+	cursor: pointer;
+}
+
+.btn-prev{
+	left: 0;
+}
+
+.btn-next{
+	right: 0;
+}
+
+.icon-carousel{
+	color: #fff;
+	opacity: 0.5;
+	transition: all 0.15s ease;
+}
+
+.icon-carousel:hover{
+	opacity: 0.9;
+}
+
+.icon-carousel:active{
+	opacity: 0.5;
+}
+
+.icon-next,
+.icon-prev{
+	font-size: 35px;
+}
+.centered{
+	position:absolute;
+	top: 35%;
+	color: #fff;
+	padding: 20px;
+	text-align: justify;
+	line-height: 2;
+}
+
+.centered h1{
+	font-size: 55px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 5px;
+	animation: slide-down 2s;
+}
+
+@keyframes slide-down{
+	from{
+		opacity: 0.2;
+		line-height: 200px;
+	}
+	to{
+		opacity: 1;
+		line-height: 30px;
+	}
+}
+
+.centered ul{
+	font-size: 25px !important;
+	font-weight: 400 !important;
+	
+}
+
+.centered strong{
+	color: rgb(42, 165, 50);
+}
+
+//modified buttons 
+.btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn.btn-primary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 2px;
+}

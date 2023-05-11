@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<div class="container">
+	<div fxFlex="100%">
+		<mat-card>
+			<mat-card-title>
+				Profile details
+			</mat-card-title>
+			<mat-divider></mat-divider>
+			<mat-card-content>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Username: </label>
+							<span *ngIf="!editMode">{{user.username}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="username" [(ngModel)]="user.username" disabled="true">
+							</mat-form-field>
+						</div>
+					</div>
+					<div class="col">
+						<div matLine>
+							<label>Country: </label>
+							<span *ngIf="!editMode">{{user.address.country}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="country" [(ngModel)]="user.address.country" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Eamil: </label>
+							<span *ngIf="!editMode">{{user.email}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="email" [(ngModel)]="user.email" required>
+							</mat-form-field>
+						</div>
+					</div>
+					<div class="col">
+						<div matLine>
+							<label>State: </label>
+							<span *ngIf="!editMode">{{user.address.state}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="state" [(ngModel)]="user.address.state" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>First name: </label>
+							<span *ngIf="!editMode">{{user.firstName}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="firstName" [(ngModel)]="user.firstName" required>
+							</mat-form-field>
+						</div>
+					</div>
+					<div class="col">
+						<div matLine>
+							<label>City: </label>
+							<span *ngIf="!editMode">{{user.address.city}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="city" [(ngModel)]="user.address.city" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Last name: </label>
+							<span *ngIf="!editMode">{{user.lastName}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="lastName" [(ngModel)]="user.lastName" required>
+							</mat-form-field>
+						</div>
+					</div>
+					<div class="col">
+						<div matLine>
+							<label>Street: </label>
+							<span *ngIf="!editMode">{{user.address.street}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="street" [(ngModel)]="user.address.street" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Gender: </label>
+							<span *ngIf="!editMode">{{user.gender}}</span>
+							<mat-form-field *ngIf="editMode">
+								<mat-select name="gender" [(ngModel)]="user.gender">
+									<mat-option value="male">Male</mat-option>
+									<mat-option value="female">Female</mat-option>
+								</mat-select>
+							</mat-form-field>
+						</div>
+					</div>
+					<div class="col">
+						<div matLine>
+							<label>Postal code: </label>
+							<span *ngIf="!editMode">{{user.address.postalCode}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="postalCode" [(ngModel)]="user.address.postalCode" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Age: </label>
+							<span *ngIf="!editMode">{{user.age}}</span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="age" [(ngModel)]="user.age" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<mat-divider></mat-divider>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Years of experience : </label>
+							<span *ngIf="!editMode"><mat-chip *ngIf="user.yearsOfExperience != 0">{{user.yearsOfExperience}}</mat-chip></span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="yearsOfExperience" [(ngModel)]="user.yearsOfExperience" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Certifications: </label>
+							<span *ngIf="!editMode"><mat-chip *ngIf="user.yearsOfExperience">{{user.certifications}}</mat-chip></span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="certifications" [(ngModel)]="user.certifications" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Level of experience: </label>
+							<span *ngIf="!editMode">{{user.experienceLevel}}</span>
+							<mat-form-field *ngIf="editMode">
+								<mat-select name="experienceLevel" [(ngModel)]="user.experienceLevel">
+									<mat-option value="Entry">Entry Level</mat-option>
+									<mat-option value="Junior">Junior Level</mat-option>
+									<mat-option value="Senior">Senior Level</mat-option>
+								</mat-select>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Skills: </label>
+							<span *ngIf="!editMode"><mat-chip *ngIf="user.skills">{{user.skills}}</mat-chip></span>
+							<mat-form-field *ngIf="editMode">
+								<input matInput name="skills" [(ngModel)]="user.skills" required>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div matLine>
+							<label>Tags: </label>
+							<span> <mat-chip *ngFor="let tag of user.tags"> {{tag}} </mat-chip> </span>
+							<!-- <mat-form-field *ngIf="editMode">
+								<input matInput name="tags" [(ngModel)]="user.tags" required>
+							</mat-form-field> -->
+						</div>
+					</div>
+				</div>
+				<div></div>
+			</mat-card-content>
+			<mat-card-actions>
+				<button (click)="editMode=!editMode" mat-raised-button color="primary">
+					Update profile
+				</button>
+				<button *ngIf="editMode" (click)="updateProfile()" mat-raised-button color="primary">
+					Save
+				</button>
+				<button *ngIf="editMode" (click)="editMode=false" mat-raised-button color="warn">
+					Cancel
+				</button>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+</div>
+</html>

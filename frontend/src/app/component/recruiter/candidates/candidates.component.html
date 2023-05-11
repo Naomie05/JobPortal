@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<div class="container">
+	<div>
+		<div class="col-lg-10 mx-auto mb-4">
+			<div class="section-title text-center ">
+				<!-- <h3 class="top-c-sep">some text</h3>
+				<p>some text</p> -->
+			</div>
+		</div>
+	</div>
+	<div class="career-search mb-60">
+		<div class="career-form mb-60">
+			<div class="row">
+				<div class="col-md-6 col-lg-3 my-3">
+					<div>
+						<!-- <input type="text" class="form-control" placeholder="Search ..." id="keywords"> -->
+						<mat-form-field>
+							<mat-label>Search</mat-label>
+							<input matInput [(ngModel)]="searchText" placeholder="" id="keywords">
+						</mat-form-field>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 my-3">
+					<div>
+						<mat-form-field>
+							<mat-label>Filter</mat-label>
+							<mat-select id="sort-select">
+								<mat-option value="1" (click)="desecSort()">Years of experience high-to-low</mat-option>
+								<mat-option value="2" (click)="ascSort()">Years of experience low-to-high</mat-option>
+								<mat-option value="3" (click)="searchEntry()">Entry level</mat-option>
+								<mat-option value="4" (click)="searchJunior()">Junior level</mat-option>
+								<mat-option value="5" (click)="searchSenior()">Senior level</mat-option>
+								<!-- <mat-option value="3" (click)="newToOld()">Date new-to-old</mat-option>
+							<mat-option value="4" (click)="oldToNew()">Salary old-to-new</mat-option> -->
+							</mat-select>
+						</mat-form-field>
+						<!-- <select class="custom-select" id="sort-select">
+							<option selected="">Sort</option>
+							<option value="1" (click)="desecSort()">Salary high-to-low</option>
+							<option value="2" (click)="ascSort()">Salary low-to-high</option>
+						</select> -->
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 my-3">
+					<button (click)="search()" type="button" class="btn btn-lg btn-block btn-light btn-custom"
+						id="contact-submit">
+						Search
+					</button>
+					<button (click)="reloadList()" type="button" class="btn btn-lg btn-block btn-light btn-custom" id="contact-submit">
+						Reload candidates
+					</button>
+				</div>
+			</div>
+		</div>
+		<div *ngFor="let post of posts">
+			<mat-card class="job-content">
+				<div class="job-left my-4 d-md-flex align-items-center flex-wrap">
+					<mat-card-content>
+						<mat-card-header>
+							<mat-card-title>{{post.title}}</mat-card-title>
+						</mat-card-header>
+						<mat-divider></mat-divider>
+						<h2>Posted by:</h2>
+						<p> Candidate :
+							{{post.seeker.username}}
+						</p>
+						<p> Certifications :
+							{{post.seeker.certifications}}
+						</p>
+						<p> Years of Experience :
+							{{post.seeker.yearsOfExperience}}
+						</p>
+						<p> Education :
+							{{post.seeker.education}}
+						</p>
+						<p> Level of Experience :
+							{{post.seeker.experienceLevel}}
+						</p>
+						<mat-divider></mat-divider>
+						<h2>Description:</h2>
+						<p>
+							{{post.description}}
+						</p>
+						<mat-divider></mat-divider>
+						<h2>Skills:</h2>
+						<p>
+							{{post.skills}}
+						</p>
+						<mat-divider></mat-divider>
+						<h2>Resume :</h2>
+						<p>
+							<button mat-raised-button color="primary" (click)="viewPdf(post.seeker.id)">View
+								pdf</button>
+						</p>
+						<mat-divider></mat-divider>
+						<p>
+							<mat-chip *ngFor="let tag of post.tags" class="mat-chip">
+								<div class="inside-mat-chip">{{tag}}</div>
+							</mat-chip>
+						</p>
+						<p>
+							<mat-chip *ngFor="let k of post.keywords" class="mat-chip">
+								<div class="inside-mat-chip">{{k}}</div>
+							</mat-chip>
+						</p>
+						<mat-divider></mat-divider>
+					</mat-card-content>
+				</div>
+				<mat-card-actions>
+					<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+						<mat-icon>more_vert</mat-icon>
+					</button>
+					<mat-menu #menu="matMenu">
+						<button mat-menu-item>
+							<mat-icon>share</mat-icon>
+							<span>Share</span>
+						</button>
+						<button mat-menu-item>
+							<mat-icon>bookmark_add</mat-icon>
+							<span>Save</span>
+						</button>
+						<button mat-menu-item>
+							<mat-icon>check_circle</mat-icon>
+							<span>Apply</span>
+						</button>
+					</mat-menu>
+					<button mat-raised-button color="primary">SHARE</button>
+					<button mat-raised-button color="primary" (click)="saveCandidate(userId, post.id)">SAVE</button>
+				</mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+</div>
+</html>

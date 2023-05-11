@@ -1,0 +1,16 @@
+mat-card {
+	text-align: left;
+	font-size: 17px;
+}
+
+li {
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+mat-card-title {
+	font-size: 25px;
+	color: #4050B5;
+	text-align: center;
+}

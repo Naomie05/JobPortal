@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<div class="navbar-container">
+	<!-- Top navbar -->
+	<mat-toolbar class="navbar" color="primary">
+		<!-- this doesn't work, will be fixed later -->
+		<button mat-icon-button aria-label="Menu" (click)="sidenav.toggle()">
+			<mat-icon>menu</mat-icon>
+		</button>
+		<a class="navbar-brand" matTooltip="Home" [routerLink]="['/recruiter-home/recruiter-dashboard']">
+			<h3>Recruiter home page</h3>
+		</a>
+		<span class="navbar-spacer"></span>
+		<button mat-button [routerLink]="['/recruiter-home/recruiter-profile']">
+			<mat-icon mat-list-icon>person</mat-icon>
+			<span> Profile </span>
+		</button>
+		<button mat-button [routerLink]="['/recruiter-home/recruiter-dashboard']">
+			<mat-icon mat-list-icon>dashboard</mat-icon>
+			<span> Dashboard </span>
+		</button>
+		<button mat-button [matMenuTriggerFor]="userMenu">
+			<mat-icon>person</mat-icon>
+			<span fxShow fxHide.xs>
+				{{user.username}}
+			</span>
+		</button>
+
+		<mat-menu #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+			<a mat-menu-item [routerLink]="['/recruiter-home/recruiter-profile']">
+				<mat-icon>person</mat-icon>
+				<span>Account</span>
+			</a>
+			<!-- no need for "routerLink" here, logOut() redirects to login anyway -->
+			<a (click)="logOut()" mat-menu-item>
+				<mat-icon>exit_to_app</mat-icon>
+				<span>Log out</span>
+			</a>
+		</mat-menu>
+	</mat-toolbar>
+
+	<mat-sidenav-container class="navbar-sidenav-container">
+		<mat-sidenav #sidenav>
+			<mat-nav-list>
+				<a mat-list-item [routerLink]="['/recruiter-home/recruiter-dashboard']" routerLinkActive="active">
+					<mat-icon mat-list-icon>dashboard</mat-icon>
+					<span mat-line>
+						Dashboard
+					</span>
+				</a>
+				<a mat-list-item [routerLink]="['/recruiter-home/recruiter-profile']" routerLinkActive="active">
+					<mat-icon>person</mat-icon>
+					<span mat-line>
+						Profile
+					</span>
+				</a>
+				<a mat-list-item [routerLink]="['/recruiter-home/recruiter-create-profile']" routerLinkActive="active">
+					<mat-icon>person</mat-icon>
+					<span mat-line> Complete profile </span>
+				</a>
+				<a mat-list-item [routerLink]="['/recruiter-home/candidates']">
+					<mat-icon mat-list-icon>search</mat-icon>
+					<span mat-line> Candidates </span>
+				</a>
+				<mat-divider></mat-divider>
+				<a mat-list-item [routerLink]="['/recruiter-home/recruiter-create-post-job']">
+					<mat-icon mat-list-icon>post_add</mat-icon>
+					<span mat-line> Post a job </span>
+				</a>
+				<a mat-list-item [routerLink]="['/recruiter-home/job-posts']">
+					<mat-icon mat-list-icon>post_add</mat-icon>
+					<span mat-line> Your posts </span>
+				</a>
+				<a mat-list-item [routerLink]="['/recruiter-home/saved-candidates']">
+					<mat-icon mat-list-icon>bookmark_added</mat-icon>
+					<span mat-line> Saved candidates </span>
+				</a>
+				<a mat-list-item [routerLink]="['/recruiter-home/job-applications']">
+					<mat-icon mat-list-icon>bookmark_added</mat-icon>
+					<span mat-line>Review job applications</span>
+				</a>
+			</mat-nav-list>
+		</mat-sidenav>
+		<mat-sidenav-content>
+			<div>
+				<svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
+					viewBox="0 0 2611.084 485.677">
+					<title>Gray Clouds Background</title>
+					<path id="Path_39" data-name="Path 39"
+						d="M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z"
+						transform="translate(142.69 -634.312)" fill="#eee" />
+				</svg>
+			</div>
+			<router-outlet></router-outlet>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+</div>
+
+</html>

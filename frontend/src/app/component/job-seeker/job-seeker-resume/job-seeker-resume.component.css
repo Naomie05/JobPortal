@@ -1,0 +1,21 @@
+mat-card {
+	text-align: left;
+	display: grid;
+	font-size: 19px;
+	margin: 1em auto;
+	min-width: 1100px;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.452);
+}
+
+mat-card-content {
+	display: table-row;
+}
+
+mat-form-field {
+	display: grid;
+}
+
+mat-card-header {
+	color: #3E51B5;
+	margin-bottom: 5px;
+}

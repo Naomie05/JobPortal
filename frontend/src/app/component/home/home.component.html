@@ -1,0 +1,63 @@
+<!-- Top navbar -->
+<div class="navbar-container">
+	<mat-toolbar class="navbar" color="primary">
+		<!-- this doesn't work, will be fixed later -->
+		<button (click)="[]" mat-icon-button>
+			<mat-icon>menu</mat-icon>
+		</button>
+		<a class="navbar-brand" [routerLink]="['/']" matTooltip="Home">
+			<h3>Welcome</h3>
+		</a>
+		<span class="navbar-spacer"></span>
+		<button mat-button [routerLink]="['/register']">
+			<mat-icon mat-list-icon>perm_contact_calendar</mat-icon>
+			<span>Sign up</span>
+		</button>
+		<button mat-button [routerLink]="['/login']">
+			<mat-icon mat-list-icon>login</mat-icon>
+			<span>Log in</span>
+		</button>
+	</mat-toolbar>
+	<router-outlet></router-outlet>
+</div>
+
+<!--Banner start here-->
+	<div *ngIf="images && images.length > 0" class="carousel-container" >
+		<img *ngFor="let image of images; let i=index"
+		[src]="image.imageSrc" [alt]="image.imageAlt"
+		[ngClass]="{'image-active': selectedIndex === i}"
+		>
+		<div class="centered">
+			<h1>Your dream job is waiting for you</h1>
+			<ul>
+				<li><strong>Match-up</strong> with jobs and employers</li>
+				<li>Build a strong <strong> portfolio</strong> to showcase yourself to the world</li>
+				<li><strong>Connect</strong>, <strong>share</strong> and <strong>learn</strong> with your industry peers</li>
+			</ul>
+			<a igxRipple [routerLink]="['/login']" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Get Started</a>
+		</div>
+		<div *ngIf="indicators" class="carousel-dot-container">
+			<span *ngFor="let dot of images; let i=index "
+				class="dot"
+				[ngClass]="{'active': selectedIndex === i}"
+				(click)="selectImage(i)"
+			>
+			</span>
+		</div>
+		<button *ngIf="controls" class="btn-carousel btn-prev" 
+			(click)="onPrevClick()"
+		>fix
+			<i class="fas fa-arrow-circle-left icon-carousel icon-prev"></i>
+		</button>
+		<button *ngIf="controls" class="btn-carousel btn-next">
+			<i class="fas fa-arrow-circle-right icon-carousel icon-next"
+				(click)="onNextClick()"
+			>
+			</i>
+		</button>
+		<router-outlet></router-outlet>
+	</div>
+	
+
+<!-- Banner End -->
+

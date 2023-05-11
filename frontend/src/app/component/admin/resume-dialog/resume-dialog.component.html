@@ -1,0 +1,59 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>{{ post.title }}</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<mat-divider></mat-divider>
+		<h2>Posted by:</h2>
+		<p> Candidate :
+			{{post.seeker.username}}
+		</p>
+		<p> Certifications :
+			{{post.seeker.certifications}}
+		</p>
+		<p> Years of Experience :
+			{{post.seeker.yearsOfExperience}}
+		</p>
+		<p> Education :
+			{{post.seeker.education}}
+		</p>
+		<p> Level of Experience :
+			{{post.seeker.experienceLevel}}
+		</p>
+		<mat-divider></mat-divider>
+		<h2>Description:</h2>
+		<p>
+			{{post.description}}
+		</p>
+		<mat-divider></mat-divider>
+		<h2>Skills:</h2>
+		<p>
+			{{post.skills}}
+		</p>
+		<mat-divider></mat-divider>
+		<h2>Resume :</h2>
+		<p>
+			{{"TODO"}}
+		</p>
+		<mat-divider></mat-divider>
+		<h2>Tags :</h2>
+		<p>
+			<mat-chip *ngFor="let tag of post.tags" class="mat-chip">
+				<div class="inside-mat-chip">{{tag}}</div>
+			</mat-chip>
+		</p>
+		<h2>Keywords :</h2>
+		<p>
+			<mat-chip *ngFor="let k of post.keywords" class="mat-chip">
+				<div class="inside-mat-chip">{{k}}</div>
+			</mat-chip>
+		</p>
+		<mat-divider></mat-divider>
+	</mat-card-content>
+
+	<mat-card-actions>
+
+		<button mat-raised-button color="primary" (click)="onCloselUserDialog()">Close</button>
+		<button mat-raised-button color="primary">Apply</button>
+	</mat-card-actions>
+</mat-card>

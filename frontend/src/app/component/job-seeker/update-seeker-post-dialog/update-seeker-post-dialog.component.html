@@ -1,0 +1,56 @@
+<div class="container">
+    <div>
+        <div>
+            <div mat-dialog-title>Post Title: {{post.title}}</div>
+        </div>
+        <div mat-dialog-content>
+            <div class="row">
+                <div class="col-1">
+                    <p>Title: </p>
+                    <mat-form-field>
+                        <input matInput name="title" [(ngModel)]="post.title" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-2">
+                    <p>Description: </p>
+                    <mat-form-field>
+                        <input matInput name="description" [(ngModel)]="post.description" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Attachment: </p>
+                    <mat-form-field>
+                        <input matInput name="attachment" [(ngModel)]="post.attachment" required>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <p>Skills: </p>
+                    <mat-form-field>
+                        <input matInput name="skills" [(ngModel)]="post.skills" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Tags: </p>
+                    <mat-form-field>
+                        <input matInput name="tags" [(ngModel)]="post.tags" required>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <p>Keywords: </p>
+                    <mat-form-field>
+                        <input matInput name="keywords" [(ngModel)]="keywordsAsString" required>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-raised-button color="warn" [mat-dialog-close]="post" (click)="onCancelUserDialog()">Cancel</button>
+            <button mat-raised-button color="primary" (click)="updatePost()">Save changes
+            </button>
+        </div>
+    </div>
+</div>

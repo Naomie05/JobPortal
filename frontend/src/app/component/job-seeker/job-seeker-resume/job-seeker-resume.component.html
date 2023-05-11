@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+	<div fxFlex="95%">
+		<mat-card>
+			<mat-card-header>
+				<mat-card-title>Create a resume</mat-card-title>
+			</mat-card-header>
+			<mat-divider></mat-divider>
+			<mat-card-content>
+				<form [formGroup]="resumeForm" (ngSubmit)="onSubmit()">
+					<div>
+						<h3>Title</h3>
+						<mat-form-field>
+							<input matInput type="title" placeholder="Title" [formControl]="title" name="title"
+								required>
+						</mat-form-field>
+					</div>
+					<div>
+						<h3>Description</h3>
+						<mat-form-field>
+							<textarea matInput type="description" placeholder="Description" [formControl]="description"
+								name="description" required></textarea>
+						</mat-form-field>
+					</div>
+					<div>
+						<h3>Skills</h3>
+						<mat-form-field>
+							<textarea matInput type="skills" placeholder="Skills" [formControl]="skills" name="skills"
+								required></textarea>
+						</mat-form-field>
+					</div>
+					<div>
+						<h3>Attachment</h3>
+						<div>
+							<input type="file" #fileInput id="uploadFile" (change)="onFileSelected($event)"
+								name="uploadFile" multiple="multiple" accept="*.pdf" />
+						</div>
+					</div>
+					<mat-divider></mat-divider>
+					<div>
+						<h3>Tags</h3>
+						<mat-form-field>
+							<input matInput type="tags" placeholder="Tags" [formControl]="tagsAsString" name="tags"
+								required>
+						</mat-form-field>
+					</div>
+					<div>
+						<h3>Keywords</h3>
+						<mat-form-field>
+							<textarea matInput type="keywords" placeholder="Keywords" [formControl]="keywordsAsString"
+								name="keywords" required></textarea>
+						</mat-form-field>
+					</div>
+					<button mat-raised-button color="primary" type="submit">Create Post</button>
+				</form>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>
+
+</html>

@@ -1,0 +1,26 @@
+mat-card {
+	max-width: 450px;
+	margin: 6em auto;
+	text-align: left;
+	display: flex;
+	font-size: 22px;
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.452);
+}
+
+mat-card-title {
+	font-size: 25px;
+	margin-top: 3;
+	text-align: center;
+}
+
+mat-tab {
+	font-size: 30px;
+}
+
+button {
+	margin: 1%;
+}
+
+mat-form-field {
+	display: grid;
+}

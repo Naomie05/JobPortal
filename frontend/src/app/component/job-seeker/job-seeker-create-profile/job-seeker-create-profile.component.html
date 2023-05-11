@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<mat-card>
+	<mat-card-content>
+		<mat-vertical-stepper [linear]="true" #stepper>
+			<mat-step>
+				<ng-template matStepLabel>Your Skills</ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>Java.. or any skills</mat-label>
+							<textarea matInput [(ngModel)]="user.skills" name="skills" required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Years of Experience</ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>Oh.. i have N years of experience doing X and C..</mat-label>
+							<textarea matInput [(ngModel)]="user.yearsOfExperience" name="yearsOfExperience"
+								required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Your certifications.. if any</ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>Linux+, CCNA,... etc</mat-label>
+							<textarea matInput [(ngModel)]="user.certifications" name="certifications"
+								required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Your level of education</ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>MS in food, perhaps?...</mat-label>
+							<textarea matInput [(ngModel)]="user.education" name="education" required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Your level of experience</ng-template>
+				<ng-template matStepContent>
+					<!-- <mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>Senior?, junior? ...</mat-label>
+							<textarea matInput [(ngModel)]="user.experienceLevel" name="experienceLevel"
+								required></textarea>
+						</mat-form-field>
+					</mat-card-content> -->
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>Experience Level</mat-label>
+							<mat-select [(ngModel)]="user.experienceLevel" name="experienceLevel" required>
+								<mat-option value="Beginner">Beginner</mat-option>
+								<mat-option value="Junior">Junior</mat-option>
+								<mat-option value="Senior">Senior</mat-option>
+							</mat-select>
+						</mat-form-field>
+					</mat-card-content>
+
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Some tags that interest you</ng-template>
+				<ng-template matStepContent>
+					<mat-card-content>
+						<mat-form-field appearance="fill">
+							<mat-label>Backend, Frontend,... etc</mat-label>
+							<textarea matInput [(ngModel)]="this.tagsAsString" name="tags" required></textarea>
+						</mat-form-field>
+					</mat-card-content>
+					<mat-card-content>
+						<div>
+							<button mat-raised-button color="primary" matStepperNext>Next</button>
+						</div>
+					</mat-card-content>
+				</ng-template>
+			</mat-step>
+			<mat-step>
+				<ng-template matStepLabel>Done</ng-template>
+				<div>
+					<mat-divider></mat-divider>
+					<button (click)="createProfile()" mat-raised-button color="primary">Submit</button>
+				</div>
+			</mat-step>
+		</mat-vertical-stepper>
+	</mat-card-content>
+</mat-card>
+
+</html>

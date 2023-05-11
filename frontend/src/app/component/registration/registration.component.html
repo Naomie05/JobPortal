@@ -1,0 +1,290 @@
+<form>
+	<mat-card>
+		<mat-tab-group>
+			<mat-tab label="Sign up">
+				<mat-card-content [formGroup]="form">
+					<mat-vertical-stepper [linear]="false" #stepper>
+						<mat-step>
+							<ng-template matStepLabel>Your name</ng-template>
+							<ng-template matStepContent>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>first name</mat-label>
+										<input matInput [formControl]="firstName" name="firstName" required>
+										<mat-error *ngIf="firstName.invalid">
+											Please provide a valid name
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>last name</mat-label>
+										<input matInput [formControl]="lastName" name="lastName" required>
+										<mat-error *ngIf="lastName.invalid">
+											Please provide a valid name
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<div>
+										<button mat-raised-button color="primary" matStepperNext>Next</button>
+									</div>
+								</mat-card-content>
+							</ng-template>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Your username, email, and password</ng-template>
+							<ng-template matStepContent>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>username</mat-label>
+										<input matInput [formControl]="username" name="username"
+											required>
+										<mat-error *ngIf="username.invalid">
+											Please provide a valid username
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>email</mat-label>
+										<input matInput [formControl]="email" name="email" required>
+										<mat-error *ngIf="email.invalid">
+											Please provide a valid email
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>password</mat-label>
+										<input matInput type="password" [formControl]="password" name="password"
+											required>
+										<mat-error *ngIf="password.invalid">
+											Please provide a valid password
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<div>
+										<button mat-raised-button color="primary" matStepperPrevious>Back</button>
+										<button mat-raised-button color="primary" matStepperNext>Next</button>
+									</div>
+								</mat-card-content>
+							</ng-template>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>General info</ng-template>
+							<ng-template matStepContent>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>Select gender</mat-label>
+										<mat-select [formControl]="gender"  name="gender" required>
+											<mat-option value="Male">Male</mat-option>
+											<mat-option value="Female">Female</mat-option>
+										</mat-select>
+										<mat-error *ngIf="gender.invalid">
+											Please provide a valid gender
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>age</mat-label>
+										<input matInput [formControl]="age" name="age" required>
+										<mat-error *ngIf="age.invalid">
+											Please provide a valid age
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<div>
+										<button mat-raised-button color="primary" matStepperPrevious>Back</button>
+										<button mat-raised-button color="primary" matStepperNext>Next</button>
+									</div>
+								</mat-card-content>
+							</ng-template>
+						</mat-step>
+						<mat-step>
+							<ng-template matStepLabel>Your address</ng-template>
+							<ng-template matStepContent>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>country</mat-label>
+										<input matInput [formControl]="country" name="country" required>
+										<mat-error *ngIf="country.invalid">
+											Please provide a valid country
+										</mat-error>
+									</mat-form-field>
+									<mat-form-field appearance="outline">
+										<mat-label>state</mat-label>
+										<input matInput [formControl]="state" name="state" required>
+										<mat-error *ngIf="state.invalid">
+											Please provide a valid state
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>city</mat-label>
+										<input matInput [formControl]="city" name="city" required>
+										<mat-error *ngIf="city.invalid">
+											Please provide a valid city
+										</mat-error>
+									</mat-form-field>
+									<mat-form-field appearance="outline">
+										<mat-label>street</mat-label>
+										<input matInput [formControl]="street" name="street" required>
+										<mat-error *ngIf="street.invalid">
+											Please provide a valid street
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<mat-form-field appearance="outline">
+										<mat-label>postal code</mat-label>
+										<input matInput [formControl]="postalcode" name="postalCode"
+											required>
+										<mat-error *ngIf="postalcode.invalid">
+											Please provide a valid postal code
+										</mat-error>
+									</mat-form-field>
+								</mat-card-content>
+								<mat-card-content>
+									<div>
+										<button mat-raised-button color="primary" matStepperPrevious>Back</button>
+										<button mat-raised-button color="primary" matStepperNext>Next</button>
+									</div>
+								</mat-card-content>
+								<mat-step>
+									<ng-template matStepLabel>Done</ng-template>
+									<div>
+										<mat-divider></mat-divider>
+										<button (click)="registerRecruiter()" mat-raised-button color="primary"
+											[disabled]="!form.valid">Sign up as
+											recruiter</button>
+										<button (click)="registerSeeker()" mat-raised-button color="primary"
+											[disabled]="!form.valid">Sign up as
+											candidate</button>
+									</div>
+								</mat-step>
+							</ng-template>
+						</mat-step>
+					</mat-vertical-stepper>
+				</mat-card-content>
+			</mat-tab>
+		</mat-tab-group>
+	</mat-card>
+</form>
+
+<!-- <form #loginForm="ngForm" (ngSubmit)="[]">
+	<mat-card>
+		<mat-tab-group>
+			<mat-tab label="Sign Up">
+				<mat-card-content>
+					<mat-form-field>
+						<mat-icon matSuffix>badge</mat-icon>
+						<mat-label>first name</mat-label>
+						<input matInput [(ngModel)]="user.firstName" name="firstName" required>
+						<mat-error>
+							Please provide a valid name
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field appearance="fill">
+						<mat-icon matSuffix>person</mat-icon>
+						<mat-label>last name</mat-label>
+						<input matInput [(ngModel)]="user.lastName" name="lastName" required>
+						<mat-error>
+							Please provide a valid name
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>password</mat-icon>
+						<mat-label>password</mat-label>
+						<input matInput type="password" [(ngModel)]="user.password" name="password" required>
+						<mat-error>
+							Please provide a valid password
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>person</mat-icon>
+						<mat-label>username</mat-label>
+						<input matInput type="username" [(ngModel)]="user.username" name="username" required>
+						<mat-error>
+							Please provide a valid username
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>mail</mat-icon>
+						<mat-label>email</mat-label>
+						<input matInput type="email" [(ngModel)]="user.email" name="email" required>
+						<mat-error>
+							Please provide a valid email
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>group</mat-icon>
+						<mat-label>gender</mat-label>
+						<input matInput type="gender" [(ngModel)]="user.gender" name="gender" required>
+						<mat-error>
+							Please provide a valid gender
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>rocket</mat-icon>
+						<mat-label>age</mat-label>
+						<input matInput type="age" [(ngModel)]="user.age" name="age" required>
+						<mat-error>
+							Please provide a valid age
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>flag</mat-icon>
+						<mat-label>country</mat-label>
+						<input matInput type="country" [(ngModel)]="user.address.country" name="country" required>
+						<mat-error>
+							Please provide a valid country
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>map</mat-icon>
+						<mat-label>state</mat-label>
+						<input matInput type="state" [(ngModel)]="user.address.state" name="state" required>
+						<mat-error>
+							Please provide a valid state
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>not_listed_location</mat-icon>
+						<mat-label>city</mat-label>
+						<input matInput type="city" [(ngModel)]="user.address.city" name="city" required>
+						<mat-error>
+							Please provide a valid city
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>business</mat-icon>
+						<mat-label>street</mat-label>
+						<input matInput type="street" [(ngModel)]="user.address.street" name="street" required>
+						<mat-error>
+							Please provide a valid street
+						</mat-error>
+					</mat-form-field>
+					<mat-form-field>
+						<mat-icon matSuffix>room</mat-icon>
+						<mat-label>postal code</mat-label>
+						<input matInput type="postalCode" [(ngModel)]="user.address.postalCode" name="postalCode"
+							required>
+						<mat-error>
+							Please provide a valid postal code
+						</mat-error>
+					</mat-form-field>
+					<mat-divider></mat-divider>
+					<button (click)="registerRecruiter()" mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Sign up as
+						recruiter</button>
+					<button (click)="registerSeeker()" mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Sign up as
+						candidate</button>
+				</mat-card-content>
+			</mat-tab>
+		</mat-tab-group>
+	</mat-card>
+</form> -->

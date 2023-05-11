@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+	<div fxFlex="95%">
+		<mat-card>
+			<mat-card-header>
+				<mat-card-title>Create Job Post</mat-card-title>
+			</mat-card-header>
+			<mat-divider></mat-divider>
+			<mat-card-content>
+				<form [formGroup]="jobPostForm" (ngSubmit)="onSubmit()">
+					<br>
+					<h3>Job Title</h3>
+					<mat-form-field>
+						<input matInput type="title" placeholder="Job Title" [formControl]="title" name="title"
+							required>
+					</mat-form-field>
+					<br>
+					<h3>Job Description</h3>
+					<mat-form-field>
+						<textarea matInput type="description" placeholder="Job Description" [formControl]="description"
+							name="description" required></textarea>
+					</mat-form-field>
+					<br>
+					<h3>Salary</h3>
+					<mat-form-field>
+						<input matInput type="salary" placeholder="Salary" [formControl]="salary" name="salary"
+							required>
+					</mat-form-field>
+					<br>
+					<h3>Responsibilities</h3>
+					<mat-form-field>
+						<textarea matInput type="responsabilites" placeholder="Responsabilities"
+							[formControl]="responsabilites" name="responsabilites" required></textarea>
+					</mat-form-field>
+					<br>
+					<h3>Expectations</h3>
+					<mat-form-field>
+						<textarea matInput type="expectations" placeholder="Expectations" [formControl]="expectations"
+							name="expectations" required></textarea>
+					</mat-form-field>
+					<br>
+					<h3>Location</h3>
+					<mat-form-field>
+						<input matInput type="location" placeholder="Location" [formControl]="location" name="location"
+							required>
+					</mat-form-field>
+					<br>
+					<h3>Role</h3>
+					<mat-form-field>
+						<input matInput type="role" placeholder="Role" [formControl]="role" name="role" required>
+					</mat-form-field>
+					<br>
+					<h3>Status</h3>
+					<mat-form-field>
+						<input matInput type="status" placeholder="Status" [formControl]="status" name="status"
+							required>
+					</mat-form-field>
+					<br>
+					<h3>Keywords</h3>
+					<mat-form-field>
+						<textarea matInput type="keywordsAsString" placeholder="Keywords" [formControl]="keywordsAsString"
+							name="keywordsAsString" required></textarea>
+					</mat-form-field>
+					<br>
+					<button mat-raised-button color="primary" type="submit">Create Post</button>
+				</form>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>
+</html>

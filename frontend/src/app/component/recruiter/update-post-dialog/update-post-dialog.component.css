@@ -1,0 +1,28 @@
+.row {
+    font-size: 17px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    min-height: 37px;
+    max-height: 37px;
+    display: inline-block;
+}
+
+mat-form-field {
+    width: 350px;
+}
+
+button {
+    flex: 1;
+    alignment: bottom;
+}
+
+mat-dialog-actions {
+    alignment: bottom;
+}
+
+mat-dialog-title {
+    font-size: 25px;
+    text-align: center;
+    color: #4050B5;
+}

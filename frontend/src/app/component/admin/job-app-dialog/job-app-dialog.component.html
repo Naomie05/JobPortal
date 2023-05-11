@@ -1,0 +1,23 @@
+<mat-card>
+	<mat-card-header>
+		<mat-card-title>{{ job.post.title }}</mat-card-title>
+	</mat-card-header>
+	<mat-card-content>
+		<ul>
+			<strong>Applicant : </strong>
+			<li><strong>Username: </strong> {{ job.user.username }}</li>
+			<li><strong>Years of Experience: </strong> {{ job.user.yearsOfExperience }}</li>
+			<li><strong>Certifications: </strong> {{ job.user.certifications }}</li>
+			<li><strong>Education: </strong> {{ job.user.education }}</li>
+			<li><strong>Level of experience: </strong> {{ job.user.experienceLevel }}</li>
+			<li><strong>Tags: </strong> {{ job.user.tags }}</li>
+			<mat-divider></mat-divider>
+			<li><strong>Resume: </strong> {{ "TODO" }}</li>
+		</ul>
+	</mat-card-content>
+
+	<mat-card-actions>
+		<button mat-raised-button color="primary" (click)="onCloseDialog()">Close</button>
+		<button mat-raised-button color="primary">DO SOMETHING</button>
+	</mat-card-actions>
+</mat-card>

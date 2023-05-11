@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<div class="navbar-container">
+	<!-- Top navbar -->
+	<mat-toolbar class="navbar" color="primary">
+		<!-- this doesn't work, will be fixed later -->
+		<a class="navbar-brand" matTooltip="Home">
+			<h3>Admin home page</h3>
+		</a>
+		<span class="navbar-spacer"></span>
+		<button mat-button [routerLink]="['/job-seeker-home/job-seeker-profile']">
+			<mat-icon mat-list-icon>person</mat-icon>
+			<span> Profile </span>
+		</button>
+		<button mat-button>
+			<mat-icon mat-list-icon>dashboard</mat-icon>
+			<span> Dashboard </span>
+		</button>
+		<button mat-button [matMenuTriggerFor]="userMenu">
+			<mat-icon>person</mat-icon>
+			<span fxShow fxHide.xs>
+				{{user.username}}
+			</span>
+		</button>
+		<mat-menu #userMenu="matMenu" xPosition="before" yPosition="above" [overlapTrigger]="false">
+			<a mat-menu-item [routerLink]="['/job-seeker-home/job-seeker-profile']">
+				<mat-icon>person</mat-icon>
+				<span>Account</span>
+			</a>
+			<!-- no need for "routerLink" here, logOut() redirects to login anyway -->
+			<a (click)="logOut()" mat-menu-item>
+				<mat-icon>exit_to_app</mat-icon>
+				<span>Log out</span>
+			</a>
+		</mat-menu>
+	</mat-toolbar>
+
+	<body>
+		<mat-tab-group>
+			<mat-tab label="Candidates">
+				<app-admin-candidates></app-admin-candidates>
+			</mat-tab>
+			<mat-tab label="Recruiters">
+				<app-admin-recruiters></app-admin-recruiters>
+			</mat-tab>
+			<mat-tab label="Job posts">
+				<app-admin-job-posts></app-admin-job-posts>
+			</mat-tab>
+			<mat-tab label="Resumes">
+				<app-admin-job-seeker-posts></app-admin-job-seeker-posts>
+			</mat-tab>
+			<mat-tab label="Job Applications"> 
+				<app-admin-job-applications></app-admin-job-applications>
+			</mat-tab>
+		</mat-tab-group>
+	</body>
+
+
+</div>
+
+</html>

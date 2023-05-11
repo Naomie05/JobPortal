@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<div class="container">
+	<div>
+		<div class="col-lg-10 mx-auto mb-4">
+			<div class="section-title text-center ">
+				<!-- <h3 class="top-c-sep">some text</h3>
+				<p>some text</p> -->
+			</div>
+		</div>
+	</div>
+	<div class="career-search mb-60">
+		<div *ngFor="let job of jobs">
+			<mat-card class="job-content">
+				<div class="job-left my-4 d-md-flex align-items-center flex-wrap">
+					<mat-card-content>
+						<mat-card-title> {{job.post.title}}</mat-card-title>
+						<mat-card-header>
+						</mat-card-header>
+						<div class="card-header">
+							<h2>Description:</h2>
+							<p>
+								{{job.post.description}}
+							</p>
+							<mat-divider></mat-divider>
+							<p>
+								<mat-chip class="mat-chip">
+									<div class="inside-mat-chip">Location: {{job.post.location}}</div>
+								</mat-chip>
+								<mat-chip class="mat-chip">
+									<div class="inside-mat-chip">$ {{job.post.salary}}</div>
+								</mat-chip>
+							</p>
+							<mat-divider></mat-divider>
+							<h2>Applicant:</h2>
+							<p>
+								{{job.user.username}}
+							</p>
+							<!-- <h2>Applicant resume:</h2>
+							<p>
+								{{"TODO"}}
+							</p> -->
+							<h2>Status:</h2>
+							<p>
+								{{job.status}}
+							</p>
+							<h2>interview Location:</h2>
+							<p>
+								{{job.interviewLocation}}
+							</p>
+						</div>
+					</mat-card-content>
+				</div>
+				<mat-card-actions>
+					<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+						<mat-icon>more_vert</mat-icon>
+					</button>
+					<mat-menu #menu="matMenu">
+						<button mat-menu-item>
+							<mat-icon>share</mat-icon>
+							<span>Share</span>
+						</button>
+						<button mat-menu-item>
+							<mat-icon>bookmark_add</mat-icon>
+							<span>Save</span>
+						</button>
+					</mat-menu>
+					<button mat-raised-button color="primary" (click)="openDialog(job.id)">REVIEW</button>
+				</mat-card-actions>
+			</mat-card>
+		</div>
+	</div>
+</div>
+
+</html>
